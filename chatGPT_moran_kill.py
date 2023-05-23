@@ -107,6 +107,7 @@ while times_run < 10:
         if i == 1000:
             print("Final vaccination level was " + str(vax_percent) + " with a population size of " + str(pop_size))
             percentTotal += vax_percent
+            time_to_full += i
             times_run += 1
 
 average_time = time_to_full / times_run
