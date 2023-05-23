@@ -1,7 +1,8 @@
 import numpy as np
 import random
 
-time_to_full = 0
+time_to_vax = 0
+total_pop = 0
 times_run = 0
 percentTotal = 0
 #Written by ChatGPT and Ethan Child
@@ -12,7 +13,7 @@ while times_run < 10:
     Agreement = 1.0  # Agreement for cooperation
     Vaccine = 0.1 # Payoff for Getting Vaccine
     Pain = 0.05 # Pain of getting vax
-    pop_size = 1000
+    pop_size = 100
     percent_update = 0.1
     want_vax = 0.5
     full_vax = False
@@ -95,8 +96,9 @@ while times_run < 10:
             print("Full vaccination achieved in generation " + str(i) + " at population level of " + str(pop_size))
 
             times_run += 1
-            time_to_full += i
+            time_to_vax += i
             percentTotal += 1
+            total_pop += pop_size
             break
         # Print the population and conviction every 10 generations
         #if i % 100 == 0:
@@ -107,9 +109,11 @@ while times_run < 10:
         if i == 1000:
             print("Final vaccination level was " + str(vax_percent) + " with a population size of " + str(pop_size))
             percentTotal += vax_percent
-            time_to_full += i
+            time_to_vax += i
             times_run += 1
+            total_pop += pop_size
 
-average_time = time_to_full / times_run
+average_time = time_to_vax / times_run
 average_percent = percentTotal / times_run
-print("Average vaccination percentage was: " + str(average_percent) + " after an average of " + str(average_time) + " generations")
+average_pop = total_pop / times_run
+print("Average vaccination percentage was: " + str(average_percent) + " with an average population level of " + str(average_pop) + " players after an average of " + str(average_time) + " generations")
