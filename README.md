@@ -1,5 +1,6 @@
 # Moran_Game_Kill
-A Moran Game that Kills A Few People After Certain Generations
+This is a Moran Game that Kills A Few Member of the Population After Certain Generations. This was a project to simulate evolutionary game theory, and how populations interact with each other. 
+
 Some of the code was written by ChatGPT, but modified by me. Here's the code ChatGPT wrote: 
 
 import numpy as np
